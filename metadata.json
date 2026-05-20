@@ -1,0 +1,6 @@
+{
+  "name": "Codecraft 2.0 - IEEE Computer Society",
+  "description": "A premium teaser landing page for the Codecraft 2.0 hackathon, featuring smooth cinematic transitions and immersive animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
