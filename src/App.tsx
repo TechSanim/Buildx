@@ -282,14 +282,8 @@ export default function App() {
             {/* Hero Section */}
             <div className="min-h-screen pt-20 sm:pt-[8rem] pb-8 sm:pb-16 flex flex-col items-center justify-start p-4 w-full relative z-10">
               
-              {/* Floating Vertical Barcode on Desktop (Left Margin) */}
-              <div className="hidden xl:flex fixed left-8 top-1/2 -translate-y-1/2 flex-row items-center gap-2 select-none pointer-events-none z-20">
-                <div className="flex flex-col gap-[2px]">
-                  {[4,2,3,1,5,2,4,1,3,2,6,1,3,2,4,1,5,3,2,1,4,2].map((w, idx) => (
-                    <div key={idx} className="bg-white/40" style={{ height: '3px', width: `${w * 3}px` }} />
-                  ))}
-                </div>
-              </div>
+              
+              {/* Floating Vertical Barcode on Desktop (Left Margin) removed as requested */}
 
 
 
