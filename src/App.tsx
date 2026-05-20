@@ -282,14 +282,8 @@ export default function App() {
             {/* Hero Section */}
             <div className="min-h-screen pt-20 sm:pt-[8rem] pb-8 sm:pb-16 flex flex-col items-center justify-start p-4 w-full relative z-10">
               
-              {/* Floating Vertical Barcode on Desktop (Left Margin) */}
-              <div className="hidden xl:flex fixed left-8 top-1/2 -translate-y-1/2 flex-row items-center gap-2 select-none pointer-events-none z-20">
-                <div className="flex flex-col gap-[2px]">
-                  {[4,2,3,1,5,2,4,1,3,2,6,1,3,2,4,1,5,3,2,1,4,2].map((w, idx) => (
-                    <div key={idx} className="bg-white/40" style={{ height: '3px', width: `${w * 3}px` }} />
-                  ))}
-                </div>
-              </div>
+              
+              {/* Floating Vertical Barcode on Desktop (Left Margin) removed as requested */}
 
 
 
@@ -378,7 +372,7 @@ export default function App() {
                 className="w-full max-w-md sm:max-w-lg mb-20 z-10"
               >
                 {showSuccess ? (
-                  <div className="py-12 flex flex-col items-center text-center bg-black border-4 border-white p-8 rounded-none w-full">
+                  <div className="py-12 flex flex-col items-center text-center bg-zinc-800 p-8 rounded-none w-full">
                     <motion.div 
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
@@ -392,7 +386,7 @@ export default function App() {
                     </p>
                   </div>
                 ) : (
-                  <div className="bg-black border-4 border-white p-8 sm:p-10 rounded-none">
+                  <div className="bg-zinc-800 p-8 sm:p-10 rounded-none">
                     <div className="text-xs sm:text-sm tracking-[0.4em] font-black text-white/60 uppercase mb-8 text-center">
                       Early register
                     </div>
@@ -452,7 +446,7 @@ export default function App() {
                 viewport={{ once: true }}
                 className="w-full max-w-5xl px-4 pb-0 z-10"
               >
-                 <div className="bg-black/85 p-6 sm:p-12 border-4 border-white text-white rounded-none flex flex-col gap-10 relative overflow-hidden">
+                 <div className="bg-zinc-800 p-6 sm:p-12 text-white rounded-none flex flex-col gap-10 relative overflow-hidden">
                   <div className="flex flex-col md:flex-row gap-10 sm:gap-16">
                     {/* Decorative background glow */}
                     <div className="absolute top-0 right-0 w-48 h-48 bg-[#ff3131]/10 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2" />
@@ -535,20 +529,24 @@ export default function App() {
                   {/* Integrated Logos inside identical dark box */}
                   <div className="pt-6 border-t border-white/5 flex flex-col items-center">
                      <span className="text-[10px] font-bold tracking-widest text-white/40 mb-4">POWERED BY</span>
-                     <div className="flex items-center gap-8 sm:gap-20 opacity-80 hover:opacity-100 transition-opacity duration-500">
-                       <img 
-                         src={icon1} 
-                         alt="Logos" 
-                         className="h-10 sm:h-16 object-contain select-none filter brightness-0 invert" 
-                         referrerPolicy="no-referrer" 
-                       />
-                       <div className="w-[1px] h-8 sm:h-10 bg-white/10" />
-                       <img 
-                         src={icon2} 
-                         alt="Logos" 
-                         className="h-10 sm:h-16 object-contain select-none filter brightness-0 invert" 
-                         referrerPolicy="no-referrer" 
-                       />
+                     <div className="flex items-center justify-between gap-6 sm:gap-16 opacity-80 hover:opacity-100 transition-opacity duration-500 w-full mx-auto">
+                       <div className="flex-1 flex justify-start items-center">
+                         <img 
+                           src={icon1} 
+                           alt="IEEE Logo" 
+                           className="max-h-96 sm:max-h-[30rem] max-w-full object-contain select-none filter brightness-0 invert transition-transform" 
+                           referrerPolicy="no-referrer" 
+                         />
+                       </div>
+                       <div className="w-[1px] h-8 sm:h-10 bg-white/10 shrink-0" />
+                       <div className="flex-1 flex justify-center items-center">
+                         <img 
+                           src={icon2} 
+                           alt="Computer Society Logo" 
+                           className="max-h-11 sm:max-h-15 max-w-full object-contain select-none filter brightness-0 invert" 
+                           referrerPolicy="no-referrer" 
+                         />
+                       </div>
                      </div>
                   </div>
                 </div>
