@@ -192,21 +192,18 @@ export default function App() {
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     className="flex items-center gap-1 text-[8px] sm:text-[10px] tracking-widest uppercase font-black text-white hover:text-[#ff3131] transition-colors"
                   >
-                    <Home size={10} className="stroke-[3]" />
                     <span>Home</span>
                   </button>
                   <button 
                     onClick={scrollToForm}
                     className="flex items-center gap-1 text-[8px] sm:text-[10px] tracking-widest uppercase font-black text-white hover:text-[#ff3131] transition-colors"
                   >
-                    <Bell size={10} className="stroke-[3]" />
                     <span>Notify Me</span>
                   </button>
                   <button 
                     onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
                     className="flex items-center gap-1 text-[8px] sm:text-[10px] tracking-widest uppercase font-black text-white hover:text-[#ff3131] transition-colors"
                   >
-                    <Phone size={10} className="stroke-[3]" />
                     <span>Contact</span>
                   </button>
                 </nav>
@@ -302,18 +299,18 @@ export default function App() {
 
                 {/* Subtitle: Learn Build Launch */}
                 <div className="text-white font-semibold text-lg sm:text-2xl md:text-3xl tracking-[0.2em] mt-3 sm:mt-5 text-center uppercase">
-                  Learn | Build | Launch
+                  <span className="font-black text-white drop-shadow-[2px_2px_0px_rgba(255,49,49,1)]">L</span>earn | <span className="font-black text-white drop-shadow-[2px_2px_0px_rgba(255,49,49,1)]">B</span>uild | <span className="font-black text-white drop-shadow-[2px_2px_0px_rgba(255,49,49,1)]">L</span>aunch
                 </div>
 
                 {/* The Three Icons from learn build launch */}
                 <div className="flex gap-6 sm:gap-10 items-center justify-center mt-3 sm:mt-5 mb-8 sm:mb-12">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg border-2 border-dashed border-white/45 flex items-center justify-center bg-black/40 shadow-[2px_2px_0px_rgba(255,49,49,0.3)]">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg border-2 border-solid border-white flex items-center justify-center bg-black/40 shadow-[2px_2px_0px_rgba(255,49,49,0.3)]">
                     <BookOpen size={20} className="text-white" />
                   </div>
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg border-2 border-dashed border-white/45 flex items-center justify-center bg-black/40 shadow-[2px_2px_0px_rgba(255,49,49,0.3)]">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg border-2 border-solid border-white flex items-center justify-center bg-black/40 shadow-[2px_2px_0px_rgba(255,49,49,0.3)]">
                     <Code size={20} className="text-white" />
                   </div>
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg border-2 border-dashed border-white/45 flex items-center justify-center bg-black/40 shadow-[2px_2px_0px_rgba(255,49,49,0.3)]">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg border-2 border-solid border-white flex items-center justify-center bg-black/40 shadow-[2px_2px_0px_rgba(255,49,49,0.3)]">
                     <Rocket size={20} className="text-white" />
                   </div>
                 </div>
