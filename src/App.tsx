@@ -42,33 +42,293 @@ const TIMELINE_DATA = [
     week: 1,
     title: "Excel + Data Basics + Google Sheets",
     subtitle: "Spreadsheets, formulas, pivot tables, charts & data cleaning. No coding yet.",
-    programmeNote: "Programme structure — Day 1 Orientation. Weeks 1-4: Fully self-paced learning via group chat with daily tasks. Final Day: Live capstone demo day.",
+    programmeNote: "Day 1 (Week 1 Monday): Live orientation class — kickoff, tool setup, intro to the programme. Weeks 1–4: Fully self-paced learning. Resources, topics, and tasks provided daily via group chat. No live sessions in between. Final Day (Week 4 Sunday): Live demo day — participants present their capstone projects.",
     topics: ["Excel/Google Sheets", "Data Types", "Formulas", "Pivot Tables", "Charts", "Data Cleaning"],
-    note: "Focus starts with fundamental data habits and functional spreadsheet calculations. Absolute baseline for analysis."
+    note: "Focus starts with fundamental data habits and functional spreadsheet calculations. Absolute baseline for analysis.",
+    days: [
+      {
+        day: "Monday · Day 1",
+        type: "LIVE CLASS",
+        title: "Orientation + programme kickoff (live class)",
+        desc: "The only live session before demo day. Instructor walks through the 4-week plan, sets up Google Sheets, explains how tasks are submitted via GitHub, and demonstrates the first spreadsheet basics.",
+        resource: "Presented live via streaming/meeting room links."
+      },
+      {
+        day: "Tuesday · Day 2",
+        type: "SELF-STUDY",
+        title: "What is data analytics? Types of data",
+        desc: "Watch: 'What is Data Analytics' (IBM YouTube, 8 min). Read: GCFGlobal Google Sheets basics. Open Google Sheets, create a new spreadsheet, try SUM and AVERAGE on 10 sample numbers.",
+        resource: "youtube.com/watch?v=yZvFH7B6gKI + gcfglobal.org/en/googlespreadsheets"
+      },
+      {
+        day: "Wednesday · Day 3",
+        type: "TASK",
+        title: "Task 1 — Clean a messy dataset",
+        desc: "Instructor shares a messy CSV in the group chat. Remove duplicates, fix blank cells, standardise text using TRIM and PROPER. Submit your cleaned Google Sheet link in the group chat.",
+        resource: "Watch: 'Data Cleaning in Google Sheets' — Spreadsheet Point (YouTube)"
+      },
+      {
+        day: "Thursday · Day 4",
+        type: "SELF-STUDY",
+        title: "Formulas deep dive — SUM, AVERAGE, COUNT, IF, VLOOKUP",
+        desc: "Watch: Kevin Stratvert 'Google Sheets full tutorial' (focus on formulas section). Practice all 5 formula types on the student dataset shared in the group chat.",
+        resource: "youtube.com/watch?v=TEN-bkCq9sM"
+      },
+      {
+        day: "Friday · Day 5",
+        type: "TASK",
+        title: "Task 2 & 3 — Write 10 formulas + build a pivot table",
+        desc: "Task 2: Write SUM, AVERAGE, COUNT, IF, VLOOKUP across two sheets on the student dataset. Task 3: Build a pivot table + 3 charts — revenue by region, category breakdown, monthly trend. Watch: 'Pivot tables in Google Sheets' (Learn Google Spreadsheets, YouTube) before starting.",
+        resource: "youtube.com/playlist?list=PLv9Pf9aNgemud2YG9q19eYoBXCCjQX1cC"
+      },
+      {
+        day: "Saturday · Project",
+        type: "PROJECT",
+        title: "Mini Project 1 — Sales / Student Performance Dashboard",
+        desc: "Full day to work on this. Analyse the provided real dataset — clean it, build pivot tables, create a Google Sheets dashboard with 3 charts. Add a summary text box explaining what the data tells you. Submit your Google Sheets link in the group chat by end of day.",
+        resource: "Submit your Google Sheets link in the group chat by end of day."
+      },
+      {
+        day: "Sunday · Bonus",
+        type: "BONUS",
+        title: "Weekend bonus (optional)",
+        desc: "Go to Kaggle.com, download the Supermarket Sales dataset, open in Google Sheets, write 5 plain-English observations about the data. No formulas needed. Share in the group chat.",
+        resource: "kaggle.com/datasets"
+      },
+      {
+        day: "Week 1 Quiz",
+        type: "QUIZ",
+        title: "Knowledge Evaluation Quiz",
+        desc: "Complete the short quiz (data concepts, chart types, spreadsheet functions) any time before Saturday. Link shared in the group chat on Monday. 20 pts towards your total.",
+        resource: "Link shared in group chat."
+      }
+    ]
   },
   {
     week: 2,
     title: "SQL Basics",
     subtitle: "Query and understand data before Python. The most-used analyst skill in MNCs.",
-    programmeNote: "SQL teaches thinking in tables and questions — making Python and Power BI much easier afterwards. Power BI and most MNC BI tools run on SQL.",
+    programmeNote: "SQL teaches thinking in tables and questions — making Python and Power BI much easier afterwards. Power BI and most MNC BI tools run on SQL. Main tool: SQLiteOnline.com — free, runs in the browser, zero installation.",
     topics: ["SELECT / WHERE", "ORDER BY / LIMIT", "GROUP BY", "COUNT / SUM / AVG", "SQLiteOnline"],
-    note: "Primary Tool: SQLiteOnline.com — free, runs in the browser, zero installation. Underpins most dashboard data retrieval engines."
+    note: "Primary Tool: SQLiteOnline.com — free, runs in the browser, zero installation. Underpins most dashboard data retrieval engines.",
+    days: [
+      {
+        day: "Monday · Day 1",
+        type: "SELF-STUDY",
+        title: "What is SQL? Databases, tables, rows and columns",
+        desc: "Watch: Alex the Analyst 'SQL for beginners' Part 1 (YouTube). Open SQLiteOnline.com, load the sample database shared in the group chat, run your first query: SELECT * FROM table. Explore what the output looks like.",
+        resource: "youtube.com/watch?v=HXV3zeQKqGY + sqliteonline.com"
+      },
+      {
+        day: "Tuesday · Day 2",
+        type: "SELF-STUDY",
+        title: "Filtering and sorting — SELECT, WHERE, ORDER BY, LIMIT",
+        desc: "Watch: Alex the Analyst SQL Part 2. Write queries to filter rows by condition, sort results, and limit output. Practice on the provided student/sales database.",
+        resource: "youtube.com/@AlexTheAnalyst (SQL Beginner series, Part 2)"
+      },
+      {
+        day: "Wednesday · Day 3",
+        type: "TASK",
+        title: "Task 5 — Write 5 SELECT queries",
+        desc: "Filter by condition, sort by value, limit results — all on the provided school database. Save your queries in a .sql file and push it to your GitHub repo.",
+        resource: "sqlzoo.net — 'SELECT basics' section for extra practice"
+      },
+      {
+        day: "Thursday · Day 4",
+        type: "SELF-STUDY",
+        title: "Aggregations — GROUP BY, COUNT, SUM, AVG, HAVING",
+        desc: "Watch: Alex the Analyst SQL Part 3. Answer: which product sold the most? What is the average order value per region? Practice on SQLiteOnline with the provided dataset.",
+        resource: "youtube.com/@AlexTheAnalyst (SQL Beginner series, Part 3) + w3schools.com/sql"
+      },
+      {
+        day: "Friday · Day 5",
+        type: "TASK",
+        title: "Task 6 & 7 — Aggregation practice + business questions challenge",
+        desc: "Task 6: GROUP BY — total sales per region, average score per class, count of orders per customer. Task 7: Answer 5 plain-English business questions using SQL (e.g. 'Find all products with price > 500, ordered by rating'). Push your .sql file to GitHub.",
+        resource: "mode.com/sql-tutorial — business-context SQL practice"
+      },
+      {
+        day: "Saturday · Project",
+        type: "PROJECT",
+        title: "Mini Project 2 — Customer & Orders SQL Analysis",
+        desc: "Using the provided SQLite database, write 6 queries: top 3 products by sales, total revenue per month, customers who ordered more than once. Submit a .sql file + a short Google Doc with your findings written in plain English. Push to GitHub.",
+        resource: "Push your completed .sql query scripts & document to GitHub"
+      },
+      {
+        day: "Sunday · Bonus",
+        type: "BONUS",
+        title: "Weekend SQLzoo bonus (optional)",
+        desc: "Complete 8 exercises on SQLZoo.net — 'SELECT from World' section. Filter countries by population and GDP. Screenshot your results and share in the group chat.",
+        resource: "sqlzoo.net"
+      },
+      {
+        day: "Optional Challenge",
+        type: "CHALLENGE",
+        title: "Joining Data Tables (INNER JOIN / LEFT JOIN)",
+        desc: "If standard tasks feel comfortable, try combining two tables. Merge a customers table with an orders table. Answer: which customer spent the most? Which product had the most orders? JOINs will be revisited in the capstone for those who want to go deeper. No pressure — only attempt once the core tasks feel easy.",
+        resource: "JOINs will be revisited in the capstone for those who want to go deeper."
+      },
+      {
+        day: "Week 2 Quiz",
+        type: "QUIZ",
+        title: "SQL Keywords & Query Logic Quiz",
+        desc: "Test your understanding of SQL keywords, query logic, and reading query output. Complete before Saturday.",
+        resource: "Link shared Monday. 20 pts towards your total."
+      }
+    ]
   },
   {
     week: 3,
     title: "Python Basics + Real-World Data Cleaning",
     subtitle: "Python in Google Colab + Git/GitHub. Practical cleaning skills analysts use every day.",
-    programmeNote: "No Pandas or NumPy at this stage. Focus is strictly on standard Python fundamentals and real-world cleaning: missing values, formats, loops, and list comprehensions.",
+    programmeNote: "No Pandas or NumPy: Too complex at this stage. Focus is on Python fundamentals and real-world cleaning: missing values, inconsistent formats, duplicate rows. All work in Google Colab — no local setup needed. Instructor shares a pre-built Colab notebook each day with skeleton code — participants just fill in the blanks.",
     topics: ["Python Basics", "Google Colab", "Git & GitHub", "CSV with Python", "Missing Values", "Format Fixing"],
-    note: "All work is done inside Google Colab notebook environments with zero local setup needed. Pre-built skeleton Colab notebooks are supplied."
+    note: "All work is done inside Google Colab notebook environments with zero local setup needed. Pre-built skeleton Colab notebooks are supplied.",
+    days: [
+      {
+        day: "Monday · Day 1",
+        type: "SELF-STUDY",
+        title: "Git & GitHub setup + Python intro",
+        desc: "Every participant sets up their GitHub repo today — instructor shares a step-by-step written guide in the group chat. Then watch: freeCodeCamp 'Python for Beginners' (first 45 mins). Open Google Colab, run your first Python cell.",
+        resource: "docs.github.com/en/get-started + youtube.com/watch?v=rfscVS0vtbw"
+      },
+      {
+        day: "Tuesday · Day 2",
+        type: "SELF-STUDY",
+        title: "Python fundamentals — variables, loops, functions, lists, dictionaries",
+        desc: "Continue the freeCodeCamp Python video. Open the shared Colab notebook, follow along and run each code cell. Focus: loops, functions, list comprehension, and dictionaries.",
+        resource: "youtube.com/watch?v=rfscVS0vtbw (continue) + w3schools.com/python"
+      },
+      {
+        day: "Wednesday · Day 3",
+        type: "TASK",
+        title: "Task 9 — Python basics Colab notebook",
+        desc: "Write loops, functions, list comprehension, and dictionary operations in Colab. Use the skeleton notebook shared by the instructor. Push the completed notebook to your GitHub repo.",
+        resource: "Colab notebook shared in group chat by instructor"
+      },
+      {
+        day: "Thursday · Day 4",
+        type: "SELF-STUDY",
+        title: "Data cleaning with Python — missing values, formats, labels",
+        desc: "Watch: Alex the Analyst 'Data Cleaning with Python' (YouTube). Learn: fix blank cells, strip whitespace, standardise date formats, rename inconsistent labels. Open the shared Google Colab notebook and follow the cleaning steps on the provided dataset.",
+        resource: "youtube.com/watch?v=bDhvCp6_lTM + hkust.edu.hk data cleaning guide"
+      },
+      {
+        day: "Friday · Day 5",
+        type: "TASK",
+        title: "Task 10 & 11 — Load a CSV + clean a messy dataset",
+        desc: "Task 10: Open a real CSV (e.g. IPL data), count rows, print column names, find unique values — built-in Python only, no Pandas. Task 11: Clean a provided messy dataset — fix blanks, whitespace, date formats, category labels. Export as a clean CSV and push to GitHub.",
+        resource: "Messy dataset shared in group chat by instructor"
+      },
+      {
+        day: "Buffer Day",
+        type: "BUFFER",
+        title: "Buffer/Catch-up day",
+        desc: "If participants are falling behind, Friday can be used as a catch-up day with no new task — just finishing Tasks 9 and 10. Task 12 (cleaning reflection write-up) can be added to the Saturday project README.",
+        resource: "Buffer day. Use to resolve pending issues."
+      },
+      {
+        day: "Saturday · Project",
+        type: "PROJECT",
+        title: "Mini Project 3 — Real Dataset Cleaning in Google Colab",
+        desc: "Take the provided messy dataset (blank cells, inconsistent formats, duplicate rows). Clean it entirely using Python — no Excel. Write comments explaining every step. Export the clean CSV. Push the notebook to GitHub. Include what was dirty and what you fixed in the README.",
+        resource: "Push the notebook to GitHub. Include what was dirty and what you fixed in the README."
+      },
+      {
+        day: "Sunday · Bonus",
+        type: "BONUS",
+        title: "Weekend data.gov.in bonus (optional)",
+        desc: "Find any dataset from data.gov.in (India). Open in Colab, write a cleaning script — fix at least 3 real issues. Push to your GitHub repo.",
+        resource: "data.gov.in"
+      },
+      {
+        day: "Optional Challenge",
+        type: "CHALLENGE",
+        title: "Parsing Nested JSON Data Structures",
+        desc: "Sometimes a column contains nested JSON strings — e.g. '{\"city\": \"Kochi\", \"zip\": \"682001\"}'. Use json.loads() to parse each row and extract fields into separate clean columns.",
+        resource: "Advanced data engineering and API log parsing skill."
+      }
+    ]
   },
   {
     week: 4,
     title: "Visualisation + Final Analytics Project",
     subtitle: "Matplotlib basics, Power BI, end-to-end capstone, and live demo day.",
-    programmeNote: "Seaborn removed at this stage (not needed). Focus is on Matplotlib and styling 5 key chart types. Power BI is introduced to build complete high-caliber business analytics dashboards.",
+    programmeNote: "Seaborn removed: Builds on Matplotlib — not needed at this level. Matplotlib basics only: 5 core chart types. Power BI introduced here because participants now have SQL and Python understanding, making its data model much easier to grasp. Widely used in MNCs — strong portfolio skill.",
     topics: ["Matplotlib Basics", "5 Chart Types", "Power BI / Looker Studio", "Data Storytelling", "Presentation"],
-    note: "Culminates in an End-to-End Capstone project and live presentation of reports to a jury/panel."
+    note: "Culminates in an End-to-End Capstone project and live presentation of reports to a jury/panel.",
+    days: [
+      {
+        day: "Monday · Day 1",
+        type: "SELF-STUDY",
+        title: "Matplotlib basics — 5 chart types",
+        desc: "Watch: Bro Code 'Matplotlib in 1 hour' (YouTube). Plot bar, line, scatter, histogram, and pie charts using the shared Colab notebook. Also: choose your capstone dataset today from the suggested list. Share your choice in the group chat.",
+        resource: "youtube.com/watch?v=OZOOLe2imFo + w3schools.com/python/matplotlib_intro.asp"
+      },
+      {
+        day: "Tuesday · Day 2",
+        type: "TASK",
+        title: "Task 13 & 15 — Plot 5 chart types on your cleaned dataset",
+        desc: "Use your Week 3 cleaned dataset. Plot all 5 chart types — label every axis, add a title. Save each chart as a PNG. Push to GitHub. Also write your 1-page capstone project plan: what question are you answering? What columns matter?",
+        resource: "Skeleton Colab notebook shared in group chat"
+      },
+      {
+        day: "Wednesday · Day 3",
+        type: "SELF-STUDY",
+        title: "Power BI intro — connect data, build charts, add filters",
+        desc: "Watch: Avi Singh 'Power BI in 60 mins' (YouTube, 5.4M views). Install Power BI Desktop (free). Connect your capstone CSV, build a bar chart and a line chart, add a slicer filter. Understand how Power BI uses SQL-like queries internally.",
+        resource: "youtube.com/watch?v=AGrl-H87pRU + learn.microsoft.com/en-us/training/powerplatform/power-bi"
+      },
+      {
+        day: "Thursday · Day 4",
+        type: "TASK",
+        title: "Task 14 — Power BI dashboard + capstone analysis",
+        desc: "Task 14: Build a Power BI dashboard with 3 visuals (bar, line, KPI card) and a category filter. Export as PDF and push to GitHub. Then begin cleaning and querying your chosen capstone dataset using Week 2 and 3 skills.",
+        resource: "guy-in-a-cube YouTube channel for Power BI tips"
+      },
+      {
+        day: "Friday · Day 5",
+        type: "SELF-STUDY",
+        title: "Data storytelling + presentation prep",
+        desc: "Watch: 'Storytelling with Data' summary video (YouTube). Build your 5-slide capstone presentation: context, findings, so-what, recommendation, next steps. Practise explaining your insights as if talking to someone non-technical.",
+        resource: "storytellingwithdata.com/blog + canva.com for slides"
+      },
+      {
+        day: "Saturday · Project",
+        type: "PROJECT",
+        title: "Final Capstone — full analysis day",
+        desc: "Full day: finalise data cleaning (Python), run SQL queries for insights, complete Matplotlib charts, finish Power BI dashboard, polish your presentation slides, and push everything to GitHub. Publish your Power BI or Tableau Public dashboard link.",
+        resource: "Publish your Power BI or Tableau Public dashboard link."
+      },
+      {
+        day: "Sunday · Demo",
+        type: "DEMO DAY",
+        title: "Live demo day — present your capstone project (live class)",
+        desc: "The second and final live session of the bootcamp. Each participant presents their analysis in 3-5 minutes. Group feedback. Career paths and next steps discussed.",
+        resource: "Live classroom presentation event."
+      },
+      {
+        day: "Final Capstone Requirements",
+        type: "CAPSTONE",
+        title: "End-to-End Data Analytics Report Requirements",
+        desc: "(1) Clean a real-world dataset with Python in Colab. (2) Query it with SQL to find 3 key insights. (3) Visualise with Matplotlib and build a Power BI dashboard. (4) Present findings in 3-5 mins at the live demo day — explain to a non-technical audience. All code on GitHub. Dashboard published on Power BI or Tableau Public. Worth 40 points.",
+        resource: "Python · SQL · Matplotlib · Power BI · GitHub · Presentation"
+      },
+      {
+        day: "Capstone Choices",
+        type: "INFO",
+        title: "Suggested Capstone Datasets available for choice",
+        desc: "• IPL cricket stats (Kaggle) | • Zomato restaurant data (Kaggle) | • COVID India data (data.gov.in) | • Indian startup funding (Kaggle) | • College placement records (Kaggle) | • Air quality index India (data.gov.in) | • Amazon product reviews (Kaggle) | • IRCTC train delays (Kaggle)",
+        resource: "Choose one dataset for your final analysis."
+      },
+      {
+        day: "After Demo Day Steps",
+        type: "INFO",
+        title: "Next steps & professional visibility",
+        desc: "Write a LinkedIn post or blog about what you built. Publish your Power BI / Tableau Public dashboard link. Add it to your CV. Next steps: Google Data Analytics Certificate (Coursera) · Advanced SQL window functions · Pandas & NumPy (now you're ready!) · Python for Data Science.",
+        resource: "Share on LinkedIn, GitHub and your resume."
+      }
+    ]
   }
 ];
 
@@ -166,6 +426,7 @@ export default function App() {
   const [hoursLeft, setHoursLeft] = useState('00');
   const [minutesLeft, setMinutesLeft] = useState('00');
   const [secondsLeftCountdown, setSecondsLeftCountdown] = useState('00');
+
 
   useEffect(() => {
     const targetDate = new Date("2026-05-30T23:59:59").getTime();
@@ -769,7 +1030,7 @@ export default function App() {
                           </div>
 
                           {/* Key Skills badging */}
-                          <div>
+                          <div className="mb-6">
                             <div className="text-[10px] font-mono font-black text-white/40 uppercase tracking-widest mb-3 flex items-center gap-2">
                               <Sparkles size={11} className="text-[#ff3131]" /> TARGET SKILLS & TOOLING
                             </div>
@@ -784,6 +1045,8 @@ export default function App() {
                               ))}
                             </div>
                           </div>
+
+
                         </div>
                       </motion.div>
                     );
