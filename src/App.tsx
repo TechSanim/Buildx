@@ -336,7 +336,13 @@ export default function App() {
         {phase === Phase.ComingSoon && (
           <>
             {/* Header / Navigation Bar */}
-            <header className="fixed top-0 left-0 w-full z-50 py-2.5 sm:py-3 bg-black/95 backdrop-blur-md border-b border-white/10 shadow-lg">
+            <header 
+              className={`fixed top-0 left-0 w-full z-50 py-2.5 sm:py-3 transition-all duration-300 ${
+                isScrolled 
+                  ? "bg-black/95 backdrop-blur-md border-b border-white/10 shadow-lg" 
+                  : "bg-transparent border-b border-transparent"
+              }`}
+            >
               <div className="max-w-7xl mx-auto px-6 sm:px-12 flex items-center justify-between">
                 {/* Always show a neat, solid brand header */}
                 <div className="font-display font-black tracking-tighter uppercase pointer-events-auto cursor-pointer leading-none text-lg sm:text-xl" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
@@ -370,17 +376,6 @@ export default function App() {
                 </nav>
               </div>
             </header>
-
-            <motion.div
-              key="ui-overlay"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="fixed inset-0 z-40 pointer-events-none"
-            >
-              {/* Footer Spacer */}
-              <footer className="absolute top-0 left-0 w-full px-6 sm:px-12 h-11 sm:h-14 flex justify-between items-center bg-black/95 border-b border-white/10 z-40" />
-            </motion.div>
           </>
         )}
       </AnimatePresence>
