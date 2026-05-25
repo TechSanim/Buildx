@@ -161,6 +161,42 @@ export default function App() {
   const [secondsLeft, setSecondsLeft] = useState(300);
   const [copied, setCopied] = useState(false);
 
+  // Time remaining to May 30, 2026 UTC/Local
+  const [daysLeft, setDaysLeft] = useState('00');
+  const [hoursLeft, setHoursLeft] = useState('00');
+  const [minutesLeft, setMinutesLeft] = useState('00');
+  const [secondsLeftCountdown, setSecondsLeftCountdown] = useState('00');
+
+  useEffect(() => {
+    const targetDate = new Date("2026-05-30T23:59:59").getTime();
+
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        setDaysLeft('00');
+        setHoursLeft('00');
+        setMinutesLeft('00');
+        setSecondsLeftCountdown('00');
+      } else {
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        setDaysLeft(String(d).padStart(2, '0'));
+        setHoursLeft(String(h).padStart(2, '0'));
+        setMinutesLeft(String(m).padStart(2, '0'));
+        setSecondsLeftCountdown(String(s).padStart(2, '0'));
+      }
+    };
+
+    updateTimer();
+    const timer = setInterval(updateTimer, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   const generateId = (type: string) => {
     const prefix = type === "Non IEEE Member" ? "NM" : type === "IEEE Member" ? "IM" : "CS";
     const num = Math.floor(100000 + Math.random() * 900000);
@@ -499,18 +535,86 @@ export default function App() {
                   <br className="hidden md:block" /> Register today to secure your seat.
                 </motion.p>
                 
+                {/* Countdown / Stopwatch Section */}
+                <motion.div
+                   initial={{ opacity: 0, y: 15 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ delay: 0.9, duration: 0.8 }}
+                   className="mt-6 sm:mt-10 w-full max-w-xl px-4 flex flex-col items-center"
+                >
+                  {/* Timer Header */}
+                  <span className="text-[10px] sm:text-xs font-mono font-black tracking-[0.25em] text-white/80 uppercase mb-4 text-center">
+                    REGISTRATION CLOSES ON MAY 30
+                  </span>
+                  
+                  {/* Stopwatch Card */}
+                  <div className="w-full bg-[#05070c]/90 border border-white/10 rounded-2xl py-5 px-6 sm:px-10 flex items-center justify-between text-center backdrop-blur-md shadow-2xl relative overflow-hidden select-none">
+                    {/* Glowing background hint */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#ff3131]/5 to-transparent pointer-events-none" />
+                    
+                    {/* Days */}
+                    <div className="flex-1 flex flex-col items-center">
+                      <span className="font-mono text-3xl sm:text-5xl font-black tracking-tight text-white select-none">
+                        {daysLeft}
+                      </span>
+                      <span className="text-[8px] sm:text-[10px] font-bold text-white/50 tracking-[0.2em] uppercase mt-2">
+                        DAYS
+                      </span>
+                    </div>
+                    
+                    {/* Divider */}
+                    <div className="w-px h-10 border-l border-white/10 mx-2" />
+                    
+                    {/* Hours */}
+                    <div className="flex-1 flex flex-col items-center">
+                      <span className="font-mono text-3xl sm:text-5xl font-black tracking-tight text-white select-none">
+                        {hoursLeft}
+                      </span>
+                      <span className="text-[8px] sm:text-[10px] font-bold text-white/50 tracking-[0.2em] uppercase mt-2">
+                        HOURS
+                      </span>
+                    </div>
+                    
+                    {/* Divider */}
+                    <div className="w-px h-10 border-l border-white/10 mx-2" />
+                    
+                    {/* Mins */}
+                    <div className="flex-1 flex flex-col items-center">
+                      <span className="font-mono text-3xl sm:text-5xl font-black tracking-tight text-white select-none">
+                        {minutesLeft}
+                      </span>
+                      <span className="text-[8px] sm:text-[10px] font-bold text-white/50 tracking-[0.2em] uppercase mt-2">
+                        MINS
+                      </span>
+                    </div>
+                    
+                    {/* Divider */}
+                    <div className="w-px h-10 border-l border-white/10 mx-2" />
+                    
+                    {/* Secs */}
+                    <div className="flex-1 flex flex-col items-center">
+                      <span className="font-mono text-3xl sm:text-5xl font-black tracking-tight text-[#ff3131] select-none drop-shadow-[0_0_12px_rgba(255,49,49,0.6)] animate-pulse">
+                        {secondsLeftCountdown}
+                      </span>
+                      <span className="text-[8px] sm:text-[10px] font-bold text-[#ff3131]/80 tracking-[0.2em] uppercase mt-2">
+                        SECS
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+
                 {/* Giant Chunky Retro Button */}
                 <motion.button 
                    initial={{ opacity: 0, y: 10 }}
                    animate={{ opacity: 1, y: 0 }}
-                   transition={{ delay: 1, duration: 0.8 }}
+                   transition={{ delay: 1.1, duration: 0.8 }}
                    onClick={() => {
                      setRegStep('form');
                      setRegistrationId(generateId(memberType));
                      setSecondsLeft(300);
                      setIsModalOpen(true);
                    }}
-                   className="px-12 py-5 bg-[#ff3131] text-white hover:bg-white hover:text-black border-[3px] border-white font-black text-xs sm:text-sm tracking-widest uppercase transition-all rounded-none shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] cursor-pointer"
+                   className="mt-10 mb-2 px-12 py-5 bg-[#ff3131] text-white hover:bg-white hover:text-black border-[3px] border-white font-black text-xs sm:text-sm tracking-widest uppercase transition-all rounded-none shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] cursor-pointer"
                 >
                    Register Now
                 </motion.button>
